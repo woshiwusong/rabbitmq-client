@@ -104,7 +104,6 @@ public class DefaultEventController implements EventController {
 		rabbitConnectionFactory.destroy();
 	}
 	
-	@Override
 	public void start() {
 		if (isStarted.get()) {
 			return;
@@ -135,12 +134,10 @@ public class DefaultEventController implements EventController {
 		msgListenerContainer.start();
 	}
 
-	@Override
 	public EventTemplate getEopEventTemplate() {
 		return eventTemplate;
 	}
 
-	@Override
 	public EventController add(String queueName, String exchangeName,EventProcesser eventProcesser) {
 		return add(queueName, exchangeName, eventProcesser, defaultCodecFactory);
 	}
@@ -153,7 +150,6 @@ public class DefaultEventController implements EventController {
 		return this;
 	}
 
-	@Override
 	public EventController add(Map<String, String> bindings,
 			EventProcesser eventProcesser) {
 		return add(bindings, eventProcesser,defaultCodecFactory);

@@ -17,7 +17,6 @@ public class HessionCodecFactory implements CodecFactory {
 
 	private final Logger logger = Logger.getLogger(HessionCodecFactory.class);
 
-	@Override
 	public byte[] serialize(Object obj) throws IOException {
 		ByteArrayOutputStream baos = null;
 		HessianOutput output = null;
@@ -41,7 +40,6 @@ public class HessionCodecFactory implements CodecFactory {
 		return baos != null ? baos.toByteArray() : null;
 	}
 
-	@Override
 	public Object deSerialize(byte[] in) throws IOException {
 		Object obj = null;
 		ByteArrayInputStream bais = null;

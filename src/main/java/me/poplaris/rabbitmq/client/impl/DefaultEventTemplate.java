@@ -36,13 +36,11 @@ public class DefaultEventTemplate implements EventTemplate {
 		this.defaultCodecFactory = defaultCodecFactory;
 	}
 
-	@Override
 	public void send(String queueName, String exchangeName, Object eventContent)
 			throws SendRefuseException {
 		this.send(queueName, exchangeName, eventContent, defaultCodecFactory);
 	}  
 
-	@Override
 	public void send(String queueName, String exchangeName, Object eventContent,
 			CodecFactory codecFactory) throws SendRefuseException {
 		if (StringUtils.isEmpty(queueName) || StringUtils.isEmpty(exchangeName)) {
